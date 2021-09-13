@@ -26,6 +26,7 @@ public extension EthereumAccount {
     internal func sign(transaction: EthereumTransaction) throws -> SignedTransaction {
         
         guard let raw = transaction.raw else {
+            print("empty raw transaction")
             throw EthereumSignerError.emptyRawTransaction
         }
         
